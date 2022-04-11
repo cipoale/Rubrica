@@ -72,7 +72,6 @@ public static boolean delete(Persona persona) throws ClassNotFoundException, SQL
         String Nome = "Modifica Update";
         String Cognome = "Prova";
         return true;
-        
     }
     
 }
