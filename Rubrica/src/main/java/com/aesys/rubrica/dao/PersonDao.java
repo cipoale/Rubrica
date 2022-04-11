@@ -70,7 +70,7 @@ public static boolean delete(Persona persona) throws ClassNotFoundException, SQL
     
     public static boolean update(Persona persona) throws ClassNotFoundException, SQLException{
         
-        
+        String ilNome = "Modifica Update";
         return true;
         
     }
