@@ -1,8 +1,0 @@
-com\aesys\rubrica\dao\PersonDao.class
-com\aesys\rubrica\filter\LoginFilter.class
-com\aesys\rubrica\models\Persona.class
-com\aesys\rubrica\dao\AccessiDao.class
-com\aesys\rubrica\myservlet\InsertServlet.class
-com\aesys\rubrica\myservlet\LoginServlet.class
-com\aesys\rubrica\dao\ConnessioneDao.class
-com\aesys\rubrica\myservlet\LogoutServlet.class
