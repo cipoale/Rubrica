@@ -28,7 +28,13 @@ public class PersonDao {
     
     public static boolean insert(Persona persona) throws ClassNotFoundException, SQLException{
         
-        
+        Connection conn = ConnessioneDao.getConnection();
+        Statement statement = conn.createStatement();
+        String query = "INSERT INTO persona VALUES ( '" + 
+                persona.getNome() + "','" + 
+                persona.getCognome() + "','" +
+                persona.getTelefono() + "')";
+        statement.executeUpdate(query);
 
         return true;
     }
