@@ -22,8 +22,23 @@ public class PersonDao {
     
     public List<Persona> getListaPersone() throws ClassNotFoundException, SQLException{
         
+        List<Persona> listaPersone = new ArrayList<>();
         
-        return null;
+        
+        Connection conn = ConnessioneDao.getConnection();
+        String query = "select * from persona";
+        PreparedStatement ps = conn.prepareStatement(query);
+            
+        ResultSet rs = ps.executeQuery();
+            
+        while (rs.next()){
+            
+            listaPersone.add(new Persona(rs.getString("nome"),
+                                        rs.getString("cognome"),
+                                        rs.getString("telefono"))) ;
+        }
+        
+        return listaPersone;
     }
     
     public static boolean insert(Persona persona) throws ClassNotFoundException, SQLException{
@@ -40,16 +55,22 @@ public class PersonDao {
         return true;
     }
     
-    public static boolean delete(Persona persona) throws ClassNotFoundException, SQLException{
+public static boolean delete(Persona persona) throws ClassNotFoundException, SQLException{
         
-        
+        Connection conn = ConnessioneDao.getConnection();
+        Statement statement = conn.createStatement();
+        String query = "DELETE FROM persona WHERE ( nome='" + 
+                persona.getNome() + "'AND cognome='" + 
+                persona.getCognome() + "'AND telefono='" +
+                persona.getTelefono() + "')";
+        statement.executeUpdate(query);
 
         return true;
     }
     
     public static boolean update(Persona persona) throws ClassNotFoundException, SQLException{
         
-        String ilNome = "Modifica Update";
+        String Nome = "Modifica Update";
         return true;
         
     }
