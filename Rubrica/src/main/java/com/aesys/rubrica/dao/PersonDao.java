@@ -69,10 +69,9 @@ public static boolean delete(Persona persona) throws ClassNotFoundException, SQL
     }
     
     public static boolean update(Persona persona) throws ClassNotFoundException, SQLException{
-        
-        String nome = "Modifica Update";
-        Integer eta = 23;
-        return true; 
+        String Nome = "Modifica Update";
+        String Cognome = "Prova";
+        return true;
     }
     
 }
