@@ -22,8 +22,23 @@ public class PersonDao {
     
     public List<Persona> getListaPersone() throws ClassNotFoundException, SQLException{
         
+        List<Persona> listaPersone = new ArrayList<>();
         
-        return null;
+        
+        Connection conn = ConnessioneDao.getConnection();
+        String query = "select * from persona";
+        PreparedStatement ps = conn.prepareStatement(query);
+            
+        ResultSet rs = ps.executeQuery();
+            
+        while (rs.next()){
+            
+            listaPersone.add(new Persona(rs.getString("nome"),
+                                        rs.getString("cognome"),
+                                        rs.getString("telefono"))) ;
+        }
+        
+        return listaPersone;
     }
     
     public static boolean insert(Persona persona) throws ClassNotFoundException, SQLException{
