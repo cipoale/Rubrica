@@ -35,6 +35,7 @@ public class PersonDao {
                 persona.getCognome() + "','" +
                 persona.getTelefono() + "')";
         statement.executeUpdate(query);
+        System.out.print("ciao");
 
         return true;
     }
