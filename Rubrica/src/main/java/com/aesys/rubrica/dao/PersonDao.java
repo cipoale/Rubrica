@@ -33,9 +33,15 @@ public class PersonDao {
         return true;
     }
     
-    public static boolean delete(Persona persona) throws ClassNotFoundException, SQLException{
+public static boolean delete(Persona persona) throws ClassNotFoundException, SQLException{
         
-        
+        Connection conn = ConnessioneDao.getConnection();
+        Statement statement = conn.createStatement();
+        String query = "DELETE FROM persona WHERE ( nome='" + 
+                persona.getNome() + "'AND cognome='" + 
+                persona.getCognome() + "'AND telefono='" +
+                persona.getTelefono() + "')";
+        statement.executeUpdate(query);
 
         return true;
     }
